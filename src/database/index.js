@@ -1,10 +1,11 @@
 import Sequelize from "sequelize";
 
 import User from "../app/models/User";
+import Marmita from "../app/models/Marmita";
 
 import databaseConfig from "../config/database";
 
-const models = [User];
+const models = [User, Marmita];
 
 class Database {
   constructor() {

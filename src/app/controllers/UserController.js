@@ -11,6 +11,12 @@ class UserController {
       address: Yup.string().required(),
     });
 
+    if (!(await schema.isValid(req.body))) {
+      return res
+        .status(401)
+        .json({ message: "Erro na validação.\nVerifique seus dados." });
+    }
+
     const { email } = req.body;
 
     try {
