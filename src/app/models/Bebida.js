@@ -1,11 +1,10 @@
 import Sequelize, { Model } from "sequelize";
 
-class Marmitas extends Model {
+class Bebidas extends Model {
   static init(sequelize) {
     super.init(
       {
         nome: Sequelize.STRING,
-        volume: Sequelize.STRING,
         preco: Sequelize.STRING,
       },
       {
@@ -17,4 +16,4 @@ class Marmitas extends Model {
   }
 }
 
-export default Marmitas;
+export default Bebidas;

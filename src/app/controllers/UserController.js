@@ -33,6 +33,12 @@ class UserController {
       return res.json({ message: `Problema no servidor. Erro: ${err}` });
     }
   }
+
+  async index(req, res) {
+    const users = await User.findAll();
+
+    return res.json(users);
+  }
 }
 
 export default new UserController();

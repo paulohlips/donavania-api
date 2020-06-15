@@ -2,10 +2,13 @@ import Sequelize from "sequelize";
 
 import User from "../app/models/User";
 import Marmita from "../app/models/Marmita";
+import Bebida from "../app/models/Bebida";
+import Menu from "../app/models/Menu";
+import Order from "../app/models/Order";
 
 import databaseConfig from "../config/database";
 
-const models = [User, Marmita];
+const models = [User, Marmita, Bebida, Menu, Order];
 
 class Database {
   constructor() {
@@ -15,10 +18,11 @@ class Database {
   init() {
     this.connection = new Sequelize(databaseConfig);
 
-    models.map((model) => model.init(this.connection));
-    /*  .map(
+    models
+      .map((model) => model.init(this.connection))
+      .map(
         (model) => model.associate && model.associate(this.connection.models)
-      ); */
+      );
   }
 }
 

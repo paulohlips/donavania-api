@@ -2,7 +2,7 @@ module.exports = {
   dialect: "postgres",
   host: "localhost",
   username: "postgres",
-  password: "cerradodev",
+  password: "docker",
   database: "donavania",
   define: {
     timestamps: true,
